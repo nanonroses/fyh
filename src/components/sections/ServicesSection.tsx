@@ -12,8 +12,6 @@ import {
   TrendingUp,
   Users,
   Building2,
-  Clock,
-  Star,
   Sparkles
 } from 'lucide-react'
 
@@ -190,7 +188,7 @@ export default function ServicesSection() {
                 </h3>
                 
                 <div className="bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-xl p-4 mb-4">
-                  <p className="text-cyan-300 font-semibold text-sm italic">"{service.story}"</p>
+                  <p className="text-cyan-300 font-semibold text-sm italic">&quot;{service.story}&quot;</p>
                 </div>
                 
                 <p className="text-lg text-gray-300 mb-6 leading-relaxed">
