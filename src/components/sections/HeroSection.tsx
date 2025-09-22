@@ -1,130 +1,373 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Trophy, Target, Zap } from 'lucide-react'
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  ArrowRight,
+  Shield,
+  Zap,
+  Target,
+  Sparkles,
+  Rocket,
+  Award,
+  TrendingUp,
+  CheckCircle,
+  Play
+} from 'lucide-react';
 
-export default function HeroSection() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+const modernServices = [
+  {
+    icon: Shield,
+    title: "Ciberseguridad OT",
+    description: "Protección avanzada para infraestructura crítica",
+    color: "neon-purple"
+  },
+  {
+    icon: Target,
+    title: "Compliance 360°",
+    description: "Ley 21663, NERC CIP, NIS2 e ISO 27001",
+    color: "electric-magenta"
+  },
+  {
+    icon: Zap,
+    title: "IA & Automatización",
+    description: "Procesos inteligentes y automatización avanzada",
+    color: "cyber-lime"
   }
+];
+
+const successMetrics = [
+  { number: "340%", label: "ROI Promedio", icon: TrendingUp },
+  { number: "$2.8M", label: "Ahorros Generados", icon: Award },
+  { number: "99.9%", label: "Uptime Garantizado", icon: CheckCircle },
+  { number: "48hrs", label: "Tiempo Respuesta", icon: Rocket }
+];
+
+const clientTestimonials = [
+  {
+    company: "Banco Central de Chile",
+    result: "85% reducción incidentes OT",
+    impact: "$2.8M ahorrados",
+    executive: "CISO"
+  },
+  {
+    company: "Minera Los Andes",
+    result: "ROI 340% en 6 meses",
+    impact: "$2.3M anuales",
+    executive: "CTO"
+  },
+  {
+    company: "Enel Distribución",
+    result: "100% compliance Ley 21663",
+    impact: "0 multas regulatorias",
+    executive: "Director TI"
+  }
+];
+
+const HeroSection: React.FC = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section id="inicio" className="min-h-screen bg-gradient-to-tr from-slate-950 via-slate-900 to-slate-800 relative overflow-hidden">
-      {/* Geometric Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-cyan-400/10 rounded-full blur-xl"></div>
-        <div className="absolute top-60 right-20 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-indigo-400/10 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 right-1/3 w-56 h-56 bg-cyan-400/10 rounded-full blur-2xl"></div>
-        
-        {/* Geometric shapes */}
-        <div className="absolute top-1/4 right-1/4 w-6 h-6 bg-cyan-400/30 rotate-45 transform"></div>
-        <div className="absolute top-1/3 left-1/5 w-4 h-4 bg-blue-400/30 rounded-full"></div>
-        <div className="absolute bottom-1/4 right-1/5 w-8 h-8 bg-indigo-400/20 rotate-12 transform"></div>
+    <section id="inicio" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-light-ghost via-white to-silver-mist">
+
+      {/* Modern Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(124 58 237 / 0.3) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }} />
       </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 min-h-screen flex items-center">
-        <div className="grid lg:grid-cols-12 gap-12 items-center w-full">
-          {/* Left Content */}
-          <div className="lg:col-span-7">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              className="space-y-8"
-            >
-              <div className="inline-flex items-center bg-gradient-to-r from-cyan-50 to-blue-50 backdrop-blur-sm border border-cyan-100 rounded-full px-6 py-3">
-                <Sparkles className="w-5 h-5 text-cyan-600 mr-2" />
-                <span className="text-cyan-700 font-semibold tracking-wide">INNOVACIÓN EMPRESARIAL</span>
-              </div>
-              
-              <h1 className="text-7xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-blue-200 leading-none tracking-tight">
-                ACELERA
-                <br />
-                <span className="text-6xl lg:text-7xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text">
-                  TU EMPRESA
-                </span>
-              </h1>
-              
-              <p className="text-2xl text-slate-100 max-w-2xl leading-relaxed font-light">
-                Automatización RPA, IA y Ciberseguridad para empresas que no se conforman con lo ordinario. 
-                <span className="text-cyan-300 font-semibold">Resultados extraordinarios garantizados.</span>
-              </p>
 
-              <div className="flex flex-col sm:flex-row gap-6">
-                <motion.button 
-                  onClick={() => scrollToSection('contacto')}
-                  whileHover={{ scale: 1.05, rotate: 1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white px-12 py-5 rounded-2xl font-black text-xl shadow-2xl hover:shadow-cyan-500/50 transition-all"
-                >
-                  <div className="flex items-center space-x-3">
-                    <span>TRANSFORMAR AHORA</span>
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                  </div>
-                </motion.button>
-                
-                <motion.button 
-                  onClick={() => scrollToSection('servicios')}
-                  whileHover={{ scale: 1.05 }}
-                  className="border-3 border-cyan-400 text-cyan-100 hover:bg-cyan-400 hover:text-slate-900 px-12 py-5 rounded-2xl font-bold text-xl transition-all"
-                >
-                  Ver Soluciones
-                </motion.button>
-              </div>
-            </motion.div>
-          </div>
+      {/* Floating Gradient Orbs */}
+      <motion.div
+        animate={{
+          x: [0, 100, 0],
+          y: [0, -50, 0],
+          scale: [1, 1.2, 1]
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 20,
+          ease: "easeInOut"
+        }}
+        className="absolute top-20 right-20 w-96 h-96 rounded-full opacity-20"
+        style={{
+          background: 'radial-gradient(circle, rgb(124 58 237 / 0.4) 0%, rgb(236 72 153 / 0.2) 50%, transparent 100%)'
+        }}
+      />
 
-          {/* Right Content - Floating Cards */}
-          <div className="lg:col-span-5 relative">
+      <motion.div
+        animate={{
+          x: [0, -80, 0],
+          y: [0, 30, 0],
+          scale: [1, 0.8, 1]
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 25,
+          ease: "easeInOut"
+        }}
+        className="absolute bottom-32 left-20 w-80 h-80 rounded-full opacity-15"
+        style={{
+          background: 'radial-gradient(circle, rgb(16 185 129 / 0.4) 0%, rgb(6 182 212 / 0.2) 50%, transparent 100%)'
+        }}
+      />
+
+      <div className="relative z-10 container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen">
+
+          {/* Left Content - Revolutionary Messaging */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="space-y-8"
+          >
+            {/* Urgency Badge */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center gap-3 px-6 py-3 glass-effect electric-border rounded-full"
+            >
+              <Sparkles className="h-5 w-5 text-electric-magenta glow-pulse" />
+              <span className="font-poppins font-semibold text-electric-magenta text-sm">
+                Últimas 3 consultorías disponibles Q4 2024
+              </span>
+            </motion.div>
+
+            {/* Company Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="inline-flex items-center gap-3 px-8 py-4 modern-hover glass-effect quantum-border rounded-full"
+            >
+              <div className="w-3 h-3 bg-cyber-lime rounded-full float-animation" />
+              <span className="font-space-grotesk font-bold text-quantum-blue text-lg tracking-wider">
+                FYH INGENIEROS 2.0
+              </span>
+            </motion.div>
+
+            {/* Revolutionary Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
               className="space-y-6"
             >
-              {/* Card 1 */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 4, delay: 0 }}
-                className="bg-gradient-to-br from-cyan-400/20 to-blue-400/20 backdrop-blur-lg border border-cyan-400/30 rounded-3xl p-8 transform rotate-2 hover:rotate-0 transition-transform"
-              >
-                <Trophy className="w-12 h-12 text-cyan-400 mb-4" />
-                <div className="text-4xl font-black text-white mb-2">+500%</div>
-                <div className="text-cyan-100 font-semibold">ROI Promedio</div>
-                <div className="text-slate-200 text-sm mt-2">En automatización</div>
-              </motion.div>
+              <h1 className="display-text text-6xl md:text-8xl lg:text-9xl text-dark-void leading-none">
+                FUTURO
+                <span className="block text-gradient glow-pulse">
+                  CYBER
+                </span>
+                <span className="block text-plasma-orange neon-glow">
+                  HOY
+                </span>
+              </h1>
 
-              {/* Card 2 */}
-              <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 5, delay: 1 }}
-                className="bg-gradient-to-br from-blue-400/20 to-indigo-400/20 backdrop-blur-lg border border-blue-400/30 rounded-3xl p-8 transform -rotate-3 hover:rotate-0 transition-transform ml-8"
+              <motion.h2
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="font-space-grotesk text-3xl md:text-4xl font-bold text-steel-gray"
               >
-                <Target className="w-12 h-12 text-blue-400 mb-4" />
-                <div className="text-4xl font-black text-white mb-2">48hrs</div>
-                <div className="text-blue-100 font-semibold">Respuesta</div>
-                <div className="text-slate-200 text-sm mt-2">Consultoría express</div>
-              </motion.div>
+                Líderes en Ciberseguridad OT • ROI 340% Garantizado
+              </motion.h2>
 
-              {/* Card 3 */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 3.5, delay: 2 }}
-                className="bg-gradient-to-br from-indigo-400/20 to-cyan-400/20 backdrop-blur-lg border border-indigo-400/30 rounded-3xl p-8 transform rotate-1 hover:rotate-0 transition-transform mr-8"
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="font-poppins text-xl text-steel-gray max-w-2xl leading-relaxed"
               >
-                <Zap className="w-12 h-12 text-indigo-400 mb-4" />
-                <div className="text-4xl font-black text-white mb-2">100%</div>
-                <div className="text-indigo-100 font-semibold">Éxito</div>
-                <div className="text-slate-200 text-sm mt-2">Proyectos entregados</div>
-              </motion.div>
+                Transformamos tu infraestructura crítica con tecnología de vanguardia.
+                Partners oficiales <span className="font-bold text-electric-magenta">Dragos Security</span>,
+                <span className="font-bold text-neon-purple"> Nozomi Networks</span> y
+                <span className="font-bold text-cyber-lime"> DHD Care</span>.
+              </motion.p>
             </motion.div>
-          </div>
+
+            {/* Revolutionary CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="flex flex-col sm:flex-row gap-6"
+            >
+              <button
+                onClick={() => scrollToSection('contacto')}
+                className="group relative overflow-hidden px-10 py-6 rounded-2xl font-space-grotesk font-bold text-lg modern-hover hologram-effect"
+                style={{
+                  background: 'linear-gradient(135deg, rgb(124 58 237) 0%, rgb(236 72 153) 100%)',
+                  color: 'white'
+                }}
+              >
+                <div className="relative z-10 flex flex-col items-center gap-2">
+                  <span>Auditoría OT Gratuita $8,500 USD</span>
+                  <span className="text-sm opacity-90 font-poppins font-medium">
+                    Sin compromiso • Entrega 48hrs • Resultados garantizados
+                  </span>
+                </div>
+                <ArrowRight className="inline-block ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              </button>
+
+              <button
+                onClick={() => scrollToSection('servicios')}
+                className="group px-10 py-6 glass-effect electric-border rounded-2xl font-space-grotesk font-bold text-electric-magenta text-lg magnetic-hover flex items-center gap-3"
+              >
+                <Play className="h-6 w-6" />
+                Ver Demo Tecnológica
+              </button>
+            </motion.div>
+
+            {/* Modern Service Cards */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.4 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            >
+              {modernServices.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 1.5 + index * 0.1 }}
+                  className="glass-hover p-6 rounded-2xl glass-effect quantum-border group"
+                >
+                  <service.icon className={`h-10 w-10 text-${service.color} mb-4 glow-pulse`} />
+                  <h3 className="font-space-grotesk font-bold text-dark-void mb-2 text-lg">
+                    {service.title}
+                  </h3>
+                  <p className="font-poppins text-steel-gray text-sm">
+                    {service.description}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Success Proof */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="space-y-8"
+          >
+            {/* Success Metrics Dashboard */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="glass-effect p-8 rounded-3xl electric-border modern-hover"
+            >
+              <div className="text-center mb-8">
+                <h3 className="font-space-grotesk font-bold text-2xl text-dark-void mb-2">
+                  RESULTADOS COMPROBADOS
+                </h3>
+                <p className="font-poppins text-steel-gray">Métricas reales de nuestros clientes</p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6">
+                {successMetrics.map((metric, index) => (
+                  <motion.div
+                    key={metric.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
+                    className="text-center group glass-hover p-4 rounded-xl"
+                  >
+                    <metric.icon className="h-8 w-8 text-electric-magenta mx-auto mb-3 glow-pulse" />
+                    <div className="font-space-grotesk font-bold text-3xl text-dark-void mb-1">
+                      {metric.number}
+                    </div>
+                    <div className="font-poppins text-steel-gray text-sm">
+                      {metric.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Client Success Stories */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              className="space-y-4"
+            >
+              <h4 className="font-space-grotesk font-bold text-dark-void text-lg mb-4">
+                Casos de Éxito Verificados
+              </h4>
+
+              {clientTestimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.company}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 1.6 + index * 0.2 }}
+                  className="glass-effect p-6 rounded-2xl glass-hover quantum-border"
+                >
+                  <div className="flex items-start gap-4">
+                    <Award className="h-6 w-6 text-plasma-orange flex-shrink-0 mt-1 glow-pulse" />
+                    <div>
+                      <div className="font-space-grotesk font-bold text-dark-void text-lg mb-1">
+                        {testimonial.company}
+                      </div>
+                      <div className="font-poppins text-electric-magenta font-semibold mb-1">
+                        {testimonial.impact}
+                      </div>
+                      <div className="font-poppins text-steel-gray text-sm mb-2">
+                        {testimonial.result}
+                      </div>
+                      <div className="font-poppins text-steel-gray text-xs italic">
+                        — {testimonial.executive}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Live Status Indicator */}
+            <motion.div
+              animate={{ opacity: [0.7, 1, 0.7] }}
+              transition={{ repeat: Infinity, duration: 3 }}
+              className="flex items-center justify-center gap-4 py-6"
+            >
+              <div className="w-4 h-4 bg-cyber-lime rounded-full float-animation" />
+              <span className="font-space-grotesk font-bold text-cyber-lime text-lg glow-pulse">
+                SISTEMAS OPERATIVOS SEGUROS
+              </span>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
+
+      {/* Floating Security Elements */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+        className="absolute top-32 right-32 w-20 h-20 glass-effect rounded-full flex items-center justify-center electric-border"
+      >
+        <Shield className="h-10 w-10 text-neon-purple glow-pulse" />
+      </motion.div>
+
+      <motion.div
+        animate={{ rotate: -360 }}
+        transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
+        className="absolute bottom-32 left-32 w-20 h-20 glass-effect rounded-full flex items-center justify-center quantum-border"
+      >
+        <Target className="h-10 w-10 text-cyber-lime glow-pulse" />
+      </motion.div>
     </section>
-  )
-}
+  );
+};
+
+export default HeroSection;

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Flame } from 'lucide-react'
+import { Menu, X, Zap, Sparkles, Shield } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -24,106 +24,169 @@ export default function Header() {
     setIsMenuOpen(false)
   }
 
+  const navigationItems = [
+    { label: 'INICIO', id: 'inicio', color: 'neon-purple' },
+    { label: 'SERVICIOS', id: 'servicios', color: 'electric-magenta' },
+    { label: 'CASOS ÉXITO', id: 'casos-exito', color: 'cyber-lime' },
+    { label: 'ROI CALCULATOR', id: 'roi-calculator', color: 'plasma-orange' }
+  ]
+
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-slate-900/90 backdrop-blur-xl border-b-2 border-cyan-400/30' 
+        isScrolled
+          ? 'glass-effect electric-border backdrop-blur-xl'
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24">
-          {/* Logo */}
-          <motion.div 
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex justify-between items-center h-20">
+
+          {/* Revolutionary Logo */}
+          <motion.div
             className="flex items-center space-x-4"
-            whileHover={{ scale: 1.1, rotate: 2 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <div className="relative">
-              <div className="w-14 h-14 bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform">
-                <Flame className="h-8 w-8 text-white" />
+            <div className="relative group">
+              <motion.div
+                animate={{ rotate: [0, 360] }}
+                transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                className="absolute inset-0 bg-gradient-to-r from-neon-purple via-electric-magenta to-cyber-lime rounded-2xl blur-sm opacity-75"
+              />
+              <div className="relative w-12 h-12 glass-effect rounded-2xl flex items-center justify-center border-2 border-transparent bg-gradient-to-br from-neon-purple to-electric-magenta">
+                <Shield className="h-7 w-7 text-light-ghost glow-pulse" />
               </div>
             </div>
+
             <div>
-              <div className="text-2xl font-black text-white tracking-tight">
-                F<span className="text-cyan-400">&</span>Y
+              <div className="font-space-grotesk font-black text-2xl text-light-ghost tracking-tight">
+                FYH
+                <span className="text-electric-magenta glow-pulse">2.0</span>
               </div>
-              <div className="text-xs font-bold text-cyan-300 uppercase tracking-widest">
-                INGENIEROS
+              <div className="font-poppins text-xs font-bold text-steel-gray uppercase tracking-widest">
+                CYBER EVOLUTION
               </div>
             </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center bg-black/30 backdrop-blur-lg rounded-full px-3 py-2 border border-white/10">
-            {[
-              { label: 'INICIO', id: 'inicio' },
-              { label: 'SOLUCIONES', id: 'servicios' },
-              { label: 'NOSOTROS', id: 'nosotros' }
-            ].map((item) => (
+          <nav className="hidden lg:flex items-center glass-effect rounded-full px-2 py-2 quantum-border">
+            {navigationItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                whileHover={{ scale: 1.1, y: -2 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-white hover:text-cyan-300 px-6 py-3 rounded-full transition-all font-black text-sm tracking-wide hover:bg-white/10"
+                className={`text-light-ghost hover:text-${item.color} px-6 py-3 rounded-full transition-all font-space-grotesk font-bold text-sm tracking-wide glass-hover relative group`}
               >
-                {item.label}
+                <span className="relative z-10">{item.label}</span>
+                <motion.div
+                  className={`absolute inset-0 bg-${item.color} rounded-full opacity-0 group-hover:opacity-10 transition-opacity`}
+                  whileHover={{ scale: 1.1 }}
+                />
               </motion.button>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <motion.button 
+          {/* Revolutionary CTA Button */}
+          <motion.button
             onClick={() => scrollToSection('contacto')}
-            whileHover={{ scale: 1.05, rotate: -2 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden lg:block group bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white px-8 py-4 rounded-2xl font-black text-sm shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1"
+            className="hidden lg:block group relative overflow-hidden px-8 py-4 rounded-2xl font-space-grotesk font-bold text-sm modern-hover hologram-effect"
+            style={{
+              background: 'linear-gradient(135deg, rgb(16 185 129) 0%, rgb(6 182 212) 100%)',
+              color: 'white'
+            }}
           >
-            <span className="group-hover:text-white transition-colors">¡QUIERO ACELERAR!</span>
+            {/* Urgency Badge */}
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="absolute -top-2 -right-2 bg-electric-magenta text-light-ghost text-xs px-3 py-1 rounded-full font-bold electric-border"
+            >
+              GRATIS
+            </motion.div>
+
+            <div className="relative z-10 flex items-center gap-2">
+              <Sparkles className="h-4 w-4" />
+              <span>AUDITORÍA OT</span>
+            </div>
           </motion.button>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden p-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full text-white"
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="lg:hidden p-3 glass-effect electric-border rounded-2xl text-light-ghost"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+            <motion.div
+              animate={{ rotate: isMenuOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.div>
+          </motion.button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -50, scale: 0.95 }}
+            initial={{ opacity: 0, y: -30, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -50, scale: 0.95 }}
-            className="lg:hidden mt-4 p-6 bg-slate-900/95 backdrop-blur-xl rounded-3xl border-2 border-cyan-400/30"
+            exit={{ opacity: 0, y: -30, scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="lg:hidden mt-4 mb-6 p-8 glass-effect electric-border rounded-3xl"
           >
-            <div className="space-y-4">
-              {[
-                { label: 'INICIO', id: 'inicio' },
-                { label: 'SOLUCIONES', id: 'servicios' },
-                { label: 'NOSOTROS', id: 'nosotros' }
-              ].map((item) => (
-                <button
+            <div className="space-y-2">
+              {navigationItems.map((item, index) => (
+                <motion.button
                   key={item.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-white hover:text-cyan-300 px-4 py-4 rounded-2xl transition-all font-black text-lg hover:bg-white/10 border border-transparent hover:border-cyan-400/30"
+                  className={`block w-full text-left text-light-ghost hover:text-${item.color} px-6 py-4 rounded-2xl transition-all font-space-grotesk font-bold text-lg glass-hover quantum-border`}
                 >
-                  {item.label}
-                </button>
+                  <div className="flex items-center gap-3">
+                    <div className={`w-2 h-2 bg-${item.color} rounded-full glow-pulse`} />
+                    {item.label}
+                  </div>
+                </motion.button>
               ))}
-              
-              <button 
+
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
                 onClick={() => scrollToSection('contacto')}
-                className="w-full bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-5 rounded-2xl font-black text-lg mt-6"
+                className="w-full relative overflow-hidden px-8 py-6 rounded-2xl font-space-grotesk font-bold text-lg mt-6 modern-hover hologram-effect"
+                style={{
+                  background: 'linear-gradient(135deg, rgb(16 185 129) 0%, rgb(6 182 212) 100%)',
+                  color: 'white'
+                }}
               >
-                ¡QUIERO ACELERAR!
-              </button>
+                {/* Mobile Urgency Badge */}
+                <div className="absolute -top-2 -right-2 bg-electric-magenta text-light-ghost text-xs px-3 py-1 rounded-full font-bold">
+                  GRATIS
+                </div>
+
+                <div className="relative z-10 flex items-center justify-center gap-3">
+                  <Zap className="h-5 w-5" />
+                  AUDITORÍA GRATUITA
+                </div>
+              </motion.button>
             </div>
           </motion.div>
         )}

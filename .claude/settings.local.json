@@ -10,9 +10,15 @@
       "Bash(git rm:*)",
       "Bash(git commit:*)",
       "Bash(curl:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(npm install:*)",
+      "WebSearch",
+      "Bash(npx kill-port:*)"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "additionalDirectories": [
+      "C:\\Users\\nanon\\OneDrive\\Documentos\\GitHub\\claude-code\\.claude\\agents"
+    ]
   }
 }
