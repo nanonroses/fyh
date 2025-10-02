@@ -134,7 +134,7 @@ const ComplianceSection: React.FC = () => {
                   <h4 className="text-white font-semibold text-lg mb-3">
                     {framework.title}
                   </h4>
-                  <div className={`inline-block px-3 py-1 bg-${framework.color} bg-opacity-10 border border-${framework.color} rounded text-${framework.color} text-xs font-semibold`}>
+                  <div className={`inline-block px-3 py-1 bg-${framework.color} bg-opacity-10 border border-${framework.color} rounded text-white text-xs font-semibold`}>
                     {framework.status}
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const ComplianceSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-gray-700">
-                <button className={`w-full py-2 px-4 bg-${framework.color} bg-opacity-10 border border-${framework.color} text-${framework.color} rounded hover:bg-opacity-20 transition-all duration-300 font-semibold`}>
+                <button className={`w-full py-2 px-4 bg-${framework.color} bg-opacity-10 border border-${framework.color} text-white rounded hover:bg-opacity-20 transition-all duration-300 font-semibold`}>
                   Consultoría Especializada
                 </button>
               </div>
@@ -194,10 +194,10 @@ const ComplianceSection: React.FC = () => {
             </p>
 
             <div className="inline-flex items-center space-x-4">
-              <button className="bg-blue-400 bg-opacity-10 border border-blue-400 text-blue-400 px-6 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
+              <button className="bg-blue-400 bg-opacity-10 border border-blue-400 text-white px-6 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
                 Evaluación Gratuita
               </button>
-              <button className="bg-gray-400 bg-opacity-10 border border-gray-400 text-gray-400 px-6 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
+              <button className="bg-gray-400 bg-opacity-10 border border-gray-400 text-white px-6 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
                 Descargar Whitepaper
               </button>
             </div>

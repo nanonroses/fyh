@@ -21,19 +21,19 @@ const values = [
     title: "Expertise Multidisciplinario",
     description: "Equipo especializado en OT, IT, compliance y marcos regulatorios internacionales",
     icon: "👥",
-    color: "blue-500"
+    color: "blue-600"
   },
   {
     title: "Partnerships Estratégicos",
     description: "Alianzas exclusivas con líderes mundiales como Dragos, Nozomi Networks y DHD Care",
     icon: "🤝",
-    color: "orange-500"
+    color: "blue-600"
   },
   {
     title: "Enfoque Holístico",
     description: "Visión integral desde la estrategia hasta la implementación y el soporte continuo",
     icon: "🎯",
-    color: "teal-500"
+    color: "blue-600"
   }
 ];
 
@@ -114,7 +114,7 @@ const AboutSection: React.FC = () => {
               <div className="flex items-start space-x-4">
                 <div className="text-4xl">{value.icon}</div>
                 <div className="flex-1">
-                  <h3 className={`text-xl font-anton text-${value.color} mb-3 neon-glow`}>
+                  <h3 className="text-xl font-anton text-white mb-3" style={{textShadow: '0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4)'}}>
                     {value.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -173,10 +173,10 @@ const AboutSection: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-blue-600 bg-opacity-10 border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
+              <button className="bg-blue-600 bg-opacity-10 border border-blue-600 text-white px-8 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
                 Conoce Nuestro Equipo
               </button>
-              <button className="bg-teal-600 bg-opacity-10 border border-teal-600 text-teal-600 px-8 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
+              <button className="bg-teal-600 bg-opacity-10 border border-teal-600 text-white px-8 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
                 Case Studies
               </button>
             </div>

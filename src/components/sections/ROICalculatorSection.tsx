@@ -18,29 +18,29 @@ interface ROICalculation {
 const industryPresets = [
   {
     name: "Energía y Utilities",
-    avgIncidentCost: 8500000,
-    riskLevel: 0.73,
+    avgIncidentCost: 4200000,
+    riskLevel: 0.65,
     icon: "⚡",
     description: "Infraestructura crítica de alta exposición"
   },
   {
     name: "Financiero",
-    avgIncidentCost: 12000000,
-    riskLevel: 0.68,
+    avgIncidentCost: 5800000,
+    riskLevel: 0.62,
     icon: "🏦",
     description: "Sector altamente regulado y objetivo prioritario"
   },
   {
     name: "Manufactura",
-    avgIncidentCost: 5500000,
-    riskLevel: 0.71,
+    avgIncidentCost: 2800000,
+    riskLevel: 0.68,
     icon: "🏭",
     description: "Procesos productivos dependientes de OT"
   },
   {
     name: "Minería",
-    avgIncidentCost: 15000000,
-    riskLevel: 0.76,
+    avgIncidentCost: 7500000,
+    riskLevel: 0.72,
     icon: "⛏️",
     description: "Operaciones 24/7 con alto impacto por paradas"
   }
@@ -61,9 +61,9 @@ const ROICalculatorSection: React.FC = () => {
     // Calculate current annual risk exposure
     const currentRisk = adjustedIncidentCost * selectedIndustry.riskLevel;
 
-    // Our solution reduces risk by 85% on average
-    const riskReduction = 0.85;
-    const preventionInvestment = companySize === 'small' ? 45000 : companySize === 'medium' ? 85000 : 150000;
+    // Our solution reduces risk by 75% on average
+    const riskReduction = 0.75;
+    const preventionInvestment = companySize === 'small' ? 35000 : companySize === 'medium' ? 68000 : 120000;
 
     // Calculate savings
     const annualSavings = currentRisk * riskReduction;
@@ -252,7 +252,7 @@ const ROICalculatorSection: React.FC = () => {
                       <div className="text-green-100 text-sm">Meses para recuperar inversión</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold">85%</div>
+                      <div className="text-2xl font-bold">75%</div>
                       <div className="text-green-100 text-sm">Reducción de riesgo</div>
                     </div>
                   </div>

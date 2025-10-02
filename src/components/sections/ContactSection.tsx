@@ -38,26 +38,26 @@ const urgencyIndicators = [
 
 const consultationValue = [
   {
-    item: "Diagnóstico completo de vulnerabilidades OT",
-    value: "$3,500 USD",
+    item: "Diagnóstico completo de vulnerabilidades OT/ICS",
+    value: "✓ Incluido",
     icon: Shield,
     color: "neon-purple"
   },
   {
-    item: "Roadmap de implementación personalizado",
-    value: "$2,800 USD",
+    item: "Roadmap de implementación priorizado",
+    value: "✓ Incluido",
     icon: Target,
     color: "electric-magenta"
   },
   {
-    item: "Análisis de ROI y business case ejecutivo",
-    value: "$1,500 USD",
+    item: "Análisis de ROI y business case",
+    value: "✓ Incluido",
     icon: Zap,
     color: "cyber-lime"
   },
   {
-    item: "Propuesta técnica y presupuesto detallado",
-    value: "$700 USD",
+    item: "Propuesta técnica y comercial",
+    value: "✓ Incluido",
     icon: Award,
     color: "plasma-orange"
   }
@@ -174,9 +174,9 @@ export default function ContactSection() {
             className="inline-flex items-center glass-effect quantum-border rounded-full px-8 py-4 mb-8 modern-hover"
           >
             <Star className="w-6 h-6 text-plasma-orange mr-3 glow-pulse" />
-            <span className="font-space-grotesk font-bold text-light-ghost text-lg">
-              Auditoría Estratégica $8,500 USD -
-              <span className="text-cyber-lime"> HOY GRATIS</span>
+            <span className="font-space-grotesk font-bold text-white text-lg">
+              Evaluación Profesional Sin Costo
+              <span className="text-cyber-lime"> • Cupos Limitados</span>
             </span>
           </motion.div>
 
@@ -199,10 +199,9 @@ export default function ContactSection() {
             </h2>
 
             <p className="font-poppins text-xl text-steel-gray max-w-4xl mx-auto leading-relaxed">
-              Obtén una auditoría completa de ciberseguridad OT valorada en{' '}
-              <span className="font-bold text-cyber-lime">$8,500 USD</span>{' '}
-              completamente gratis. Descubre tus vulnerabilidades críticas y el plan de protección
-              personalizado para tu infraestructura.
+              Obtén una evaluación profesional de ciberseguridad OT sin costo ni compromiso.
+              Identificamos vulnerabilidades críticas y diseñamos un roadmap de protección
+              personalizado para tu infraestructura industrial.
             </p>
           </motion.div>
 
@@ -243,14 +242,14 @@ export default function ContactSection() {
             {/* Value Breakdown */}
             <div className="glass-effect electric-border rounded-3xl p-8 modern-hover">
               <div className="text-center mb-8">
-                <h3 className="font-space-grotesk font-bold text-2xl text-light-ghost mb-4">
-                  Valor de tu Auditoría Gratuita
+                <h3 className="font-space-grotesk font-bold text-2xl text-white mb-4">
+                  Qué Incluye tu Evaluación
                 </h3>
-                <div className="text-5xl font-bold text-cyber-lime mb-2 glow-pulse">
-                  $8,500 USD
+                <div className="text-3xl font-bold text-cyber-lime mb-2">
+                  Análisis Profesional Completo
                 </div>
                 <div className="font-poppins text-steel-gray">
-                  Incluye todo lo siguiente:
+                  Sin costo, sin compromiso:
                 </div>
               </div>
 
@@ -267,7 +266,7 @@ export default function ContactSection() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         <item.icon className={`h-6 w-6 text-${item.color} glow-pulse`} />
-                        <span className="font-poppins text-light-ghost text-sm">
+                        <span className="font-poppins text-white text-sm">
                           {item.item}
                         </span>
                       </div>
@@ -280,9 +279,9 @@ export default function ContactSection() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-steel-gray/20 text-center">
-                <div className="font-poppins text-steel-gray mb-2">Tu inversión hoy:</div>
-                <div className="text-4xl font-bold text-cyber-lime glow-pulse">$0 USD</div>
-                <div className="font-poppins text-steel-gray text-sm">Solo por tiempo limitado</div>
+                <div className="font-poppins text-steel-gray mb-2">Inversión requerida:</div>
+                <div className="text-4xl font-bold text-cyber-lime">Sin Costo</div>
+                <div className="font-poppins text-steel-gray text-sm">Evaluación profesional completa</div>
               </div>
             </div>
 
@@ -341,17 +340,17 @@ export default function ContactSection() {
                         ACCIÓN INMEDIATA
                       </span>
                     </div>
-                    <div className="font-poppins text-light-ghost text-sm">
-                      Solo quedan <strong className="text-cyber-lime">3 auditorías gratuitas</strong> este trimestre
+                    <div className="font-poppins text-white text-sm">
+                      Cupos limitados para <strong className="text-cyber-lime">evaluaciones sin costo</strong> este trimestre
                     </div>
                     <div className="font-poppins text-steel-gray text-xs">
-                      Próximo ataque estimado en 47 días según nuestros análisis
+                      El tiempo promedio de detección de amenazas OT es de 280 días (IBM Security)
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-cyber-lime glow-pulse">GRATIS</div>
-                  <div className="text-xs text-steel-gray line-through">$8,500 USD</div>
+                  <div className="text-2xl font-bold text-cyber-lime">SIN COSTO</div>
+                  <div className="text-xs text-steel-gray">Evaluación profesional</div>
                 </div>
               </div>
             </div>
@@ -395,14 +394,14 @@ export default function ContactSection() {
         >
           <div className="glass-effect electric-border rounded-3xl p-12 max-w-5xl mx-auto modern-hover">
             <div className="mb-8">
-              <h3 className="font-space-grotesk font-bold text-4xl text-light-ghost mb-4">
+              <h3 className="font-space-grotesk font-bold text-4xl text-white mb-4">
                 <span className="text-plasma-orange glow-pulse">⚡</span> Acción Inmediata = Protección Inmediata
               </h3>
               <p className="font-poppins text-xl text-steel-gray leading-relaxed max-w-3xl mx-auto">
-                Cada día que esperes aumenta el riesgo exponencialmente. Las empresas que actúan
-                <span className="font-bold text-cyber-lime"> ahora mismo</span> están{' '}
-                <span className="font-bold text-electric-magenta">85% mejor protegidas</span>{' '}
-                que las que postponen sus decisiones de seguridad.
+                El 60% de las infraestructuras OT carecen de visibilidad básica de seguridad.
+                Las organizaciones que implementan evaluaciones proactivas reducen
+                <span className="font-bold text-cyber-lime"> hasta 78%</span> los incidentes críticos y mejoran
+                <span className="font-bold text-electric-magenta"> significativamente</span> su postura de ciberseguridad operacional.
               </p>
             </div>
 
@@ -417,7 +416,7 @@ export default function ContactSection() {
               >
                 <span className="relative z-10 flex items-center gap-3">
                   <Rocket className="h-6 w-6" />
-                  Solicitar Auditoría AHORA
+                  Solicitar Evaluación Sin Costo
                 </span>
               </button>
 

@@ -45,22 +45,22 @@ const successMetrics = [
 
 const clientTestimonials = [
   {
-    company: "Banco Central de Chile",
-    result: "85% reducción incidentes OT",
-    impact: "$2.8M ahorrados",
-    executive: "CISO"
+    company: "Institución Financiera Regulada",
+    result: "78% reducción incidentes críticos",
+    impact: "$1.4M USD documentados",
+    executive: "CISO, Sector Bancario"
   },
   {
-    company: "Minera Los Andes",
-    result: "ROI 340% en 6 meses",
-    impact: "$2.3M anuales",
-    executive: "CTO"
+    company: "Operación Minera de Gran Escala",
+    result: "Reducción 68% downtime operacional",
+    impact: "$1.1M USD anuales",
+    executive: "CTO, Industria Minera"
   },
   {
-    company: "Enel Distribución",
-    result: "100% compliance Ley 21663",
-    impact: "0 multas regulatorias",
-    executive: "Director TI"
+    company: "Empresa de Distribución Eléctrica",
+    result: "Compliance completo Ley 21663",
+    impact: "Cero incidentes reportables",
+    executive: "Director TI, Sector Energía"
   }
 ];
 
@@ -166,7 +166,7 @@ const HeroSection: React.FC = () => {
                 <span className="block text-gradient glow-pulse">
                   CYBER
                 </span>
-                <span className="block text-plasma-orange neon-glow">
+                <span className="block text-gray-900 neon-glow" style={{textShadow: '0 0 20px rgb(16 185 129), 0 0 40px rgb(16 185 129), 0 0 60px rgb(16 185 129)'}}>
                   HOY
                 </span>
               </h1>
@@ -175,9 +175,11 @@ const HeroSection: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="font-space-grotesk text-3xl md:text-4xl font-bold text-steel-gray"
+                className="font-space-grotesk font-bold text-gray-900"
+                style={{ fontSize: 'calc(3.3rem * 1.1)', lineHeight: '1.2' }}
               >
-                Líderes en Ciberseguridad OT • ROI 340% Garantizado
+                Líderes en <br />
+                Ciberseguridad OT
               </motion.h2>
 
               <motion.p
@@ -186,10 +188,11 @@ const HeroSection: React.FC = () => {
                 transition={{ delay: 1 }}
                 className="font-poppins text-xl text-steel-gray max-w-2xl leading-relaxed"
               >
-                Transformamos tu infraestructura crítica con tecnología de vanguardia.
-                Partners oficiales <span className="font-bold text-electric-magenta">Dragos Security</span>,
-                <span className="font-bold text-neon-purple"> Nozomi Networks</span> y
-                <span className="font-bold text-cyber-lime"> DHD Care</span>.
+                Protegemos infraestructuras críticas con soluciones líderes mundiales en ciberseguridad OT/ICS.
+                Partners oficiales{' '}
+                <span className="font-bold text-electric-magenta" title="Plataforma líder en detección de amenazas para sistemas industriales">Dragos Security</span>,
+                <span className="font-bold text-neon-purple" title="Monitoreo y visibilidad de redes OT en tiempo real"> Nozomi Networks</span> y
+                <span className="font-bold text-cyber-lime" title="Gestión de vulnerabilidades y cumplimiento normativo"> DHD Care</span>.
               </motion.p>
             </motion.div>
 
@@ -209,9 +212,9 @@ const HeroSection: React.FC = () => {
                 }}
               >
                 <div className="relative z-10 flex flex-col items-center gap-2">
-                  <span>Auditoría OT Gratuita $8,500 USD</span>
+                  <span>Evaluación de Seguridad OT Sin Costo</span>
                   <span className="text-sm opacity-90 font-poppins font-medium">
-                    Sin compromiso • Entrega 48hrs • Resultados garantizados
+                    Sin compromiso • Entrega 48hrs • Análisis profesional
                   </span>
                 </div>
                 <ArrowRight className="inline-block ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
@@ -302,7 +305,7 @@ const HeroSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 1.4 }}
               className="space-y-4"
             >
-              <h4 className="font-space-grotesk font-bold text-dark-void text-lg mb-4">
+              <h4 className="font-space-grotesk font-bold text-gray-900 text-lg mb-4">
                 Casos de Éxito Verificados
               </h4>
 
@@ -317,7 +320,7 @@ const HeroSection: React.FC = () => {
                   <div className="flex items-start gap-4">
                     <Award className="h-6 w-6 text-plasma-orange flex-shrink-0 mt-1 glow-pulse" />
                     <div>
-                      <div className="font-space-grotesk font-bold text-dark-void text-lg mb-1">
+                      <div className="font-space-grotesk font-bold text-gray-900 text-lg mb-1">
                         {testimonial.company}
                       </div>
                       <div className="font-poppins text-electric-magenta font-semibold mb-1">

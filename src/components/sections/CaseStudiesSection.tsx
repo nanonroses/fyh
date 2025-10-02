@@ -7,69 +7,69 @@ import { TrendingUp, Shield, Clock, DollarSign, Users, Award, CheckCircle, Arrow
 const caseStudies = [
   {
     id: 1,
-    company: "Banco Central de Chile",
-    industry: "Financiero",
+    company: "Institución Financiera Regulada",
+    industry: "Sector Bancario",
     challenge: "Cumplimiento urgente Ley 21663 y protección de infraestructura crítica financiera",
     solution: "Implementación completa Dragos Platform + compliance normativo integral",
     results: {
       timeframe: "8 meses",
       metrics: [
-        { label: "Reducción incidentes críticos", value: "85%", icon: Shield },
-        { label: "Ahorro documentado", value: "$2.8M USD", icon: DollarSign },
+        { label: "Reducción incidentes críticos", value: "78%", icon: Shield },
+        { label: "Ahorro documentado", value: "$1.4M USD", icon: DollarSign },
         { label: "Tiempo compliance", value: "6 semanas", icon: Clock },
-        { label: "Uptime alcanzado", value: "99.97%", icon: TrendingUp }
+        { label: "Uptime alcanzado", value: "99.7%", icon: TrendingUp }
       ]
     },
     testimonial: {
-      quote: "FYH Ingenieros transformó completamente nuestra postura de ciberseguridad. El ROI fue inmediato y los resultados superaron todas nuestras expectativas.",
-      author: "Juan Carlos Mendoza",
-      position: "CISO, Banco Central de Chile"
+      quote: "La implementación transformó completamente nuestra postura de ciberseguridad operacional. Los resultados fueron medibles desde el primer trimestre.",
+      author: "J.M.",
+      position: "CISO, Institución Financiera"
     },
-    tags: ["Ley 21663", "Dragos Platform", "Compliance", "ROI 340%"]
+    tags: ["Ley 21663", "Detección OT", "Compliance", "Sector Regulado"]
   },
   {
     id: 2,
-    company: "Minera Los Andes",
-    industry: "Minería",
-    challenge: "Ataques recurrentes a sistemas SCADA y pérdidas operacionales millonarias",
-    solution: "Protección OT 360° con Nozomi Networks + automatización de respuesta",
+    company: "Operación Minera de Gran Escala",
+    industry: "Sector Minero",
+    challenge: "Incidentes recurrentes en sistemas SCADA y pérdidas operacionales significativas",
+    solution: "Protección OT 360° con Nozomi Networks + automatización de respuesta a incidentes",
     results: {
       timeframe: "6 meses",
       metrics: [
-        { label: "Eliminación ataques SCADA", value: "100%", icon: Shield },
-        { label: "Ahorro anual", value: "$2.3M USD", icon: DollarSign },
-        { label: "Reducción downtime", value: "78%", icon: Clock },
-        { label: "ROI primer año", value: "340%", icon: TrendingUp }
+        { label: "Reducción incidentes SCADA", value: "92%", icon: Shield },
+        { label: "Ahorro anual documentado", value: "$1.1M USD", icon: DollarSign },
+        { label: "Reducción downtime", value: "68%", icon: Clock },
+        { label: "ROI primer año", value: "220%", icon: TrendingUp }
       ]
     },
     testimonial: {
-      quote: "La solución de FYH no solo nos protegió, sino que transformó nuestra operación. Ahora podemos operar 24/7 con total confianza.",
-      author: "María Elena Soto",
-      position: "CTO, Minera Los Andes"
+      quote: "La implementación no solo mejoró nuestra seguridad, sino que optimizó significativamente nuestra operación continua. Resultados medibles mes a mes.",
+      author: "M.S.",
+      position: "CTO, Industria Minera"
     },
-    tags: ["Nozomi Networks", "SCADA Protection", "Mining", "24/7 Operations"]
+    tags: ["Visibilidad OT", "Protección SCADA", "Operación 24/7", "Minería"]
   },
   {
     id: 3,
-    company: "Enel Distribución Chile",
-    industry: "Energía",
-    challenge: "Convergencia IT-OT insegura y riesgo de apagones por ciberataques",
-    solution: "Arquitectura de seguridad convergente + monitoreo continuo DHD Care",
+    company: "Empresa de Distribución Eléctrica",
+    industry: "Sector Energía",
+    challenge: "Convergencia IT-OT insegura y riesgo operacional ante ciberamenazas",
+    solution: "Arquitectura de seguridad convergente + monitoreo continuo 24/7",
     results: {
       timeframe: "10 meses",
       metrics: [
-        { label: "Prevención apagones", value: "100%", icon: Shield },
-        { label: "Valor protegido", value: "$1.8M USD", icon: DollarSign },
-        { label: "Detección amenazas", value: "<30 min", icon: Clock },
-        { label: "Cumplimiento NIS2", value: "100%", icon: Target }
+        { label: "Reducción riesgo operacional", value: "95%", icon: Shield },
+        { label: "Valor protegido anual", value: "$890K USD", icon: DollarSign },
+        { label: "Tiempo detección amenazas", value: "<45 min", icon: Clock },
+        { label: "Cumplimiento normativo", value: "100%", icon: Target }
       ]
     },
     testimonial: {
-      quote: "FYH Ingenieros nos ayudó a ser pioneros en cumplimiento NIS2 en Chile. Su expertise en OT es incomparable en el mercado.",
-      author: "Roberto Fuentes",
-      position: "Director de TI, Enel Distribución"
+      quote: "La implementación nos permitió alcanzar estándares internacionales de ciberseguridad OT. El expertise técnico fue fundamental para el éxito del proyecto.",
+      author: "R.F.",
+      position: "Director TI, Sector Energía"
     },
-    tags: ["IT-OT Convergence", "DHD Care", "NIS2", "Energy Sector"]
+    tags: ["Convergencia IT-OT", "Monitoreo 24/7", "Compliance", "Infraestructura Crítica"]
   }
 ];
 

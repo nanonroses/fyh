@@ -63,11 +63,11 @@ export default function Header() {
             </div>
 
             <div>
-              <div className="font-space-grotesk font-black text-2xl text-light-ghost tracking-tight">
+              <div className="font-space-grotesk font-black text-2xl text-white tracking-tight">
                 FYH
                 <span className="text-electric-magenta glow-pulse">2.0</span>
               </div>
-              <div className="font-poppins text-xs font-bold text-steel-gray uppercase tracking-widest">
+              <div className="font-poppins text-xs font-bold text-white uppercase tracking-widest">
                 CYBER EVOLUTION
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function Header() {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`text-light-ghost hover:text-${item.color} px-6 py-3 rounded-full transition-all font-space-grotesk font-bold text-sm tracking-wide glass-hover relative group`}
+                className={`text-white hover:text-${item.color} px-6 py-3 rounded-full transition-all font-space-grotesk font-bold text-sm tracking-wide glass-hover relative group`}
               >
                 <span className="relative z-10">{item.label}</span>
                 <motion.div
@@ -157,7 +157,7 @@ export default function Header() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left text-light-ghost hover:text-${item.color} px-6 py-4 rounded-2xl transition-all font-space-grotesk font-bold text-lg glass-hover quantum-border`}
+                  className={`block w-full text-left text-white hover:text-${item.color} px-6 py-4 rounded-2xl transition-all font-space-grotesk font-bold text-lg glass-hover quantum-border`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-2 h-2 bg-${item.color} rounded-full glow-pulse`} />
