@@ -118,7 +118,7 @@ const HeroSection: React.FC = () => {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-6 py-12">
+      <div className="relative z-10 container mx-auto px-6 pt-32 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-screen">
 
           {/* Left Content - Revolutionary Messaging */}
