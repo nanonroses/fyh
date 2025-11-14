@@ -176,23 +176,23 @@ const OTProblemsSection: React.FC = () => {
                 </h3>
 
                 {/* Pain Point - Dolor */}
-                <div className="rounded-xl p-4 mb-4 border border-red-400/40 bg-gradient-to-r from-red-950/70 to-rose-950/70">
-                  <p className="font-poppins text-red-200 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                <div className="rounded-xl p-4 mb-4 border border-red-300 bg-white">
+                  <p className="font-poppins text-red-600 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
                     <TrendingDown className="h-4 w-4" />
                     Problema:
                   </p>
-                  <p className="font-poppins text-white leading-relaxed text-sm">
+                  <p className="font-poppins text-dark-void leading-relaxed text-sm">
                     {item.pain}
                   </p>
                 </div>
 
                 {/* Solution - Solución */}
-                <div className="rounded-xl p-4 border border-emerald-400/40 bg-gradient-to-r from-emerald-950/70 to-teal-950/70">
-                  <p className={`font-poppins text-emerald-200 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2`}>
+                <div className="rounded-xl p-4 border border-emerald-300 bg-white">
+                  <p className={`font-poppins text-emerald-600 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2`}>
                     <CheckCircle2 className="h-4 w-4" />
                     Solución:
                   </p>
-                  <p className="font-poppins text-white leading-relaxed text-sm">
+                  <p className="font-poppins text-dark-void leading-relaxed text-sm">
                     {item.solution}
                   </p>
                 </div>
