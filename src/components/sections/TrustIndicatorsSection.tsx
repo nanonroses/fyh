@@ -39,8 +39,8 @@ const certifications = [
     level: "PLATINUM"
   },
   {
-    name: "Nozomi Networks Elite",
-    description: "Implementaciones OT certificadas",
+    name: "Wallix OT",
+    description: "Gestión de acceso y control de sesiones OT",
     icon: Target,
     level: "ELITE"
   },
