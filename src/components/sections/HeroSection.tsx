@@ -191,8 +191,9 @@ const HeroSection: React.FC = () => {
                 Protegemos infraestructuras críticas con soluciones líderes mundiales en ciberseguridad OT/ICS.
                 Partners oficiales{' '}
                 <span className="font-bold text-electric-magenta" title="Plataforma líder en detección de amenazas para sistemas industriales">Dragos Security</span>,
-                <span className="font-bold text-neon-purple" title="Monitoreo y visibilidad de redes OT en tiempo real"> Nozomi Networks</span> y
-                <span className="font-bold text-cyber-lime" title="Gestión de vulnerabilidades y cumplimiento normativo"> DHD Care</span>.
+                <span className="font-bold text-neon-purple" title="Monitoreo y visibilidad de redes OT en tiempo real"> Nozomi Networks</span>,
+                <span className="font-bold text-cyber-lime" title="Gestión de vulnerabilidades y cumplimiento normativo"> DHD Care</span> y
+                <span className="font-bold text-plasma-orange" title="Plataforma de seguridad para sistemas OT"> Wallix OT</span>.
               </motion.p>
             </motion.div>
 
