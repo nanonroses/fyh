@@ -221,7 +221,7 @@ const ServicesSection: React.FC = () => {
                   {service.subtitle}
                 </h4>
 
-                <p className="font-poppins text-steel-gray mb-6 leading-relaxed">
+                <p className="font-poppins text-white mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
