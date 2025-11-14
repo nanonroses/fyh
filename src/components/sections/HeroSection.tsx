@@ -245,7 +245,7 @@ const HeroSection: React.FC = () => {
                   className="glass-hover p-6 rounded-2xl glass-effect quantum-border group"
                 >
                   <service.icon className={`h-10 w-10 text-${service.color} mb-4 glow-pulse`} />
-                  <h3 className="font-space-grotesk font-bold text-dark-void mb-2 text-lg">
+                  <h3 className="font-space-grotesk font-bold text-black mb-2 text-lg">
                     {service.title}
                   </h3>
                   <p className="font-poppins text-steel-gray text-sm">
