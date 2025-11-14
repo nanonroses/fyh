@@ -174,7 +174,7 @@ export default function ContactSection() {
             className="inline-flex items-center glass-effect quantum-border rounded-full px-8 py-4 mb-8 modern-hover"
           >
             <Star className="w-6 h-6 text-plasma-orange mr-3 glow-pulse" />
-            <span className="font-space-grotesk font-bold text-white text-lg">
+            <span className="font-space-grotesk font-bold text-black text-lg">
               Evaluación Profesional Sin Costo
               <span className="text-cyber-lime"> • Cupos Limitados</span>
             </span>
@@ -198,7 +198,7 @@ export default function ContactSection() {
               </span>
             </h2>
 
-            <p className="font-poppins text-xl text-steel-gray max-w-4xl mx-auto leading-relaxed">
+            <p className="font-poppins text-xl text-black max-w-4xl mx-auto leading-relaxed">
               Obtén una evaluación profesional de ciberseguridad OT sin costo ni compromiso.
               Identificamos vulnerabilidades críticas y diseñamos un roadmap de protección
               personalizado para tu infraestructura industrial.
@@ -279,9 +279,9 @@ export default function ContactSection() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-steel-gray/20 text-center">
-                <div className="font-poppins text-steel-gray mb-2">Inversión requerida:</div>
+                <div className="font-poppins text-white mb-2">Inversión requerida:</div>
                 <div className="text-4xl font-bold text-cyber-lime">Sin Costo</div>
-                <div className="font-poppins text-steel-gray text-sm">Evaluación profesional completa</div>
+                <div className="font-poppins text-white text-sm">Evaluación profesional completa</div>
               </div>
             </div>
 
