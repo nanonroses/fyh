@@ -78,7 +78,7 @@ const OTProblemsSection: React.FC = () => {
   };
 
   return (
-    <section className="mt-20 pt-20 py-16 bg-gradient-to-br from-dark-void via-dark-void/95 to-dark-void relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-dark-void via-dark-void/95 to-dark-void relative overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" style={{

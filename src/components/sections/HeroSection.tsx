@@ -73,7 +73,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-light-ghost via-white to-silver-mist">
+    <section id="inicio" className="relative min-h-screen overflow-hidden bg-gradient-to-br from-light-ghost via-white to-silver-mist mt-20 pt-20">
 
       {/* Modern Background Pattern */}
       <div className="absolute inset-0 opacity-5">
