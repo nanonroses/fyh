@@ -323,7 +323,7 @@ const ServicesSection: React.FC = () => {
                   <span className="text-gradient glow-pulse">Revolucionarios</span>{' '}
                   Garantizados
                 </h3>
-                <p className="font-poppins text-xl text-steel-gray leading-relaxed max-w-4xl mx-auto">
+                <p className="font-poppins text-xl text-white leading-relaxed max-w-4xl mx-auto">
                   Somos los únicos en Chile que garantizamos{' '}
                   <span className="font-bold text-electric-magenta">resultados medibles</span>{' '}
                   y{' '}
@@ -349,7 +349,7 @@ const ServicesSection: React.FC = () => {
                     <div className={`text-4xl font-bold text-${item.color} mb-2 glow-pulse`}>
                       {item.metric}
                     </div>
-                    <div className="font-poppins text-steel-gray text-sm">
+                    <div className="font-poppins text-white text-sm">
                       {item.label}
                     </div>
                   </motion.div>
