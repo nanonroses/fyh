@@ -184,7 +184,7 @@ const ComplianceSection: React.FC = () => {
                 <div className="flex items-start gap-4 mb-6">
                   <div className="text-5xl">{framework.icon}</div>
                   <div className="flex-1">
-                    <h3 className="font-space-grotesk font-bold text-2xl text-light-ghost mb-2">
+                    <h3 className="font-space-grotesk font-bold text-2xl text-white mb-2">
                       {framework.name}
                     </h3>
                     <h4 className="font-poppins font-semibold text-lg text-cyber-lime mb-3">
@@ -206,7 +206,7 @@ const ComplianceSection: React.FC = () => {
                 </p>
 
                 <div className="space-y-3 mb-6">
-                  <h5 className="font-space-grotesk font-bold text-light-ghost uppercase tracking-wide flex items-center gap-2 text-sm">
+                  <h5 className="font-space-grotesk font-bold text-white uppercase tracking-wide flex items-center gap-2 text-sm">
                     <Star className="h-4 w-4 text-cyber-lime" />
                     Aspectos Clave:
                   </h5>
@@ -262,7 +262,7 @@ const ComplianceSection: React.FC = () => {
               transition={{ delay: 0.2 }}
               className="mb-8"
             >
-              <h3 className="font-space-grotesk font-bold text-4xl lg:text-5xl text-light-ghost mb-6 text-center">
+              <h3 className="font-space-grotesk font-bold text-4xl lg:text-5xl text-white mb-6 text-center">
                 Servicios
                 <span className="block text-gradient glow-pulse">
                   de Compliance
@@ -338,7 +338,7 @@ const ComplianceSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <h3 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-light-ghost mb-8">
+          <h3 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-white mb-8">
             Próximas Fechas
             <span className="block text-gradient glow-pulse">
               Importantes
