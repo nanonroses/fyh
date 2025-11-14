@@ -155,7 +155,7 @@ const ComplianceSection: React.FC = () => {
               </span>
             </h2>
 
-            <p className="font-poppins text-xl text-silver-mist max-w-4xl mx-auto leading-relaxed">
+            <p className="font-poppins text-xl text-white max-w-4xl mx-auto leading-relaxed">
               Especialistas en marcos regulatorios internacionales y normativas de ciberseguridad.
               <span className="block font-bold text-cyber-lime mt-2">
                 Aseguramos el cumplimiento total en tu industria.
@@ -369,7 +369,7 @@ const ComplianceSection: React.FC = () => {
                   <div className="font-space-grotesk font-bold text-2xl text-cyber-lime mb-2 glow-pulse">
                     {item.date}
                   </div>
-                  <div className="font-poppins text-silver-mist text-sm">
+                  <div className="font-poppins text-white text-sm">
                     {item.description}
                   </div>
                 </motion.div>
