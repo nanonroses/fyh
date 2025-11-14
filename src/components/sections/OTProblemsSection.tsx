@@ -176,7 +176,7 @@ const OTProblemsSection: React.FC = () => {
                 </h3>
 
                 {/* Pain Point - Dolor */}
-                <div className="rounded-xl p-4 mb-4 border border-electric-magenta/50 bg-electric-magenta/15">
+                <div className="rounded-xl p-4 mb-4 border border-electric-magenta/60 bg-gradient-to-br from-electric-magenta/25 to-electric-magenta/10">
                   <p className="font-poppins text-electric-magenta font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
                     <TrendingDown className="h-4 w-4" />
                     Problema:
@@ -187,7 +187,7 @@ const OTProblemsSection: React.FC = () => {
                 </div>
 
                 {/* Solution - Solución */}
-                <div className="rounded-xl p-4 border border-cyber-lime/50 bg-cyber-lime/15">
+                <div className="rounded-xl p-4 border border-cyber-lime/60 bg-gradient-to-br from-cyber-lime/25 to-cyber-lime/10">
                   <p className={`font-poppins text-cyber-lime font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2`}>
                     <CheckCircle2 className="h-4 w-4" />
                     Solución:
