@@ -268,7 +268,7 @@ const ComplianceSection: React.FC = () => {
                   de Compliance
                 </span>
               </h3>
-              <p className="font-poppins text-xl text-silver-mist leading-relaxed max-w-4xl mx-auto text-center">
+              <p className="font-poppins text-xl text-white leading-relaxed max-w-4xl mx-auto text-center">
                 Ayudamos a las organizaciones a navegar el complejo panorama regulatorio,
                 <span className="block font-bold text-cyber-lime mt-2">
                   asegurando cumplimiento y fortaleciendo la ciberseguridad.
