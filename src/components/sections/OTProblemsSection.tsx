@@ -171,7 +171,7 @@ const OTProblemsSection: React.FC = () => {
                 </motion.div>
 
                 {/* Problem Title */}
-                <h3 className="font-space-grotesk font-bold text-lg text-white mb-3">
+                <h3 className="font-space-grotesk font-bold text-lg text-dark-void mb-3">
                   {item.problem}
                 </h3>
 
