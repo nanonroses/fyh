@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight, Shield, Zap, AlertCircle, Star } from 'lucide-react';
 
 const frameworks = [
   {
@@ -91,28 +92,76 @@ const services = [
 ];
 
 const ComplianceSection: React.FC = () => {
+  const scrollToContact = () => {
+    const element = document.getElementById('contacto');
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="py-20 relative" style={{backgroundColor: '#0f172a'}}>
-      {/* Parallax Background */}
-      <div className="parallax-bg absolute inset-0" style={{
-        backgroundImage: 'linear-gradient(45deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 128, 255, 0.05) 100%)'
-      }}>
-        <div className="parallax-overlay"></div>
+    <section className="py-24 bg-gradient-to-br from-dark-void via-dark-void/95 to-dark-void relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="w-full h-full" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ec4899' fill-opacity='0.2'%3E%3Cpath d='M30 0L60 30L30 60L0 30z'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundSize: '60px 60px'
+        }} />
       </div>
+
+      {/* Animated Glow */}
+      <motion.div
+        animate={{
+          x: [0, 100, 0],
+          y: [0, -50, 0],
+        }}
+        transition={{ repeat: Infinity, duration: 30, ease: "easeInOut" }}
+        className="absolute top-32 right-32 w-40 h-40 rounded-full opacity-8 blur-3xl"
+        style={{
+          background: 'radial-gradient(circle, rgb(0, 255, 136 / 0.6) 0%, transparent 70%)'
+        }}
+      />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-5xl font-anton text-white mb-6">
-            COMPLIANCE NORMATIVO
-          </h2>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-            Especialistas en marcos regulatorios internacionales y normativas de ciberseguridad
-          </p>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-3 glass-effect quantum-border rounded-full px-8 py-4 mb-8"
+          >
+            <Shield className="h-6 w-6 text-cyber-lime glow-pulse" />
+            <span className="font-space-grotesk font-bold text-cyber-lime text-lg tracking-wider">
+              MARCOS REGULATORIOS
+            </span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="space-y-6"
+          >
+            <h2 className="display-text text-5xl lg:text-7xl text-light-ghost leading-none">
+              COMPLIANCE
+              <span className="block text-gradient glow-pulse">
+                NORMATIVO
+              </span>
+            </h2>
+
+            <p className="font-poppins text-xl text-silver-mist max-w-4xl mx-auto leading-relaxed">
+              Especialistas en marcos regulatorios internacionales y normativas de ciberseguridad.
+              <span className="block font-bold text-cyber-lime mt-2">
+                Aseguramos el cumplimiento total en tu industria.
+              </span>
+            </p>
+          </motion.div>
         </motion.div>
 
         {/* Frameworks Grid */}
@@ -120,43 +169,74 @@ const ComplianceSection: React.FC = () => {
           {frameworks.map((framework, index) => (
             <motion.div
               key={framework.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="cyber-hover bg-gray-800 rounded-lg p-8 border border-gray-700 hover:border-blue-400 shadow-lg"
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.12 }}
+              className="group glass-effect electric-border rounded-3xl p-8 modern-hover relative overflow-hidden"
             >
-              <div className="flex items-start space-x-4 mb-6">
-                <div className="text-4xl">{framework.icon}</div>
-                <div className="flex-1">
-                  <h3 className={`text-2xl font-anton text-${framework.color} mb-2`}>
-                    {framework.name}
-                  </h3>
-                  <h4 className="text-white font-semibold text-lg mb-3">
-                    {framework.title}
-                  </h4>
-                  <div className={`inline-block px-3 py-1 bg-${framework.color} bg-opacity-10 border border-${framework.color} rounded text-white text-xs font-semibold`}>
-                    {framework.status}
+              {/* Background Glow */}
+              <div className="absolute inset-0 opacity-10 blur-3xl">
+                <div className="w-full h-full bg-gradient-to-br from-cyber-lime to-quantum-blue" />
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="text-5xl">{framework.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="font-space-grotesk font-bold text-2xl text-light-ghost mb-2">
+                      {framework.name}
+                    </h3>
+                    <h4 className="font-poppins font-semibold text-lg text-cyber-lime mb-3">
+                      {framework.title}
+                    </h4>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 + index * 0.1 }}
+                      className="inline-block px-4 py-2 rounded-full text-xs font-space-grotesk font-bold glass-effect quantum-border text-cyber-lime glow-pulse"
+                    >
+                      {framework.status}
+                    </motion.div>
                   </div>
                 </div>
-              </div>
 
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                {framework.description}
-              </p>
+                <p className="font-poppins text-white mb-6 leading-relaxed text-sm">
+                  {framework.description}
+                </p>
 
-              <div className="space-y-3">
-                <h5 className="text-white font-semibold text-sm">Aspectos clave:</h5>
-                {framework.details.map((detail, detailIndex) => (
-                  <div key={detailIndex} className="cyber-bullet text-gray-200 text-sm">
-                    {detail}
+                <div className="space-y-3 mb-6">
+                  <h5 className="font-space-grotesk font-bold text-light-ghost uppercase tracking-wide flex items-center gap-2 text-sm">
+                    <Star className="h-4 w-4 text-cyber-lime" />
+                    Aspectos Clave:
+                  </h5>
+                  {framework.details.map((detail, detailIndex) => (
+                    <motion.div
+                      key={detailIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 + detailIndex * 0.1 }}
+                      className="flex items-start gap-3"
+                    >
+                      <AlertCircle className="h-4 w-4 text-cyber-lime mt-0.5 flex-shrink-0 glow-pulse" />
+                      <span className="font-poppins text-white text-sm">
+                        {detail}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <motion.button
+                  onClick={scrollToContact}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full group relative overflow-hidden bg-gradient-to-r from-cyber-lime to-quantum-blue text-dark-void py-4 px-6 rounded-2xl font-space-grotesk font-bold text-sm modern-hover hologram-effect"
+                >
+                  <div className="relative z-10 flex items-center justify-center gap-2">
+                    <span>Consultoría Especializada</span>
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
-                ))}
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-gray-700">
-                <button className={`w-full py-2 px-4 bg-${framework.color} bg-opacity-10 border border-${framework.color} text-white rounded hover:bg-opacity-20 transition-all duration-300 font-semibold`}>
-                  Consultoría Especializada
-                </button>
+                </motion.button>
               </div>
             </motion.div>
           ))}
@@ -164,70 +244,136 @@ const ComplianceSection: React.FC = () => {
 
         {/* Services Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="bg-gray-800 rounded-lg p-8 border border-gray-700"
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="glass-effect electric-border rounded-3xl p-12 lg:p-16 max-w-6xl mx-auto modern-hover relative overflow-hidden"
         >
-          <h3 className="text-3xl font-anton text-center text-blue-400 mb-8">
-            SERVICIOS DE COMPLIANCE
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={service}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="cyber-bullet text-gray-200 font-medium text-center py-3"
-              >
-                {service}
-              </motion.div>
-            ))}
+          {/* Background Glow */}
+          <div className="absolute inset-0 opacity-20 blur-3xl">
+            <div className="w-full h-full bg-gradient-to-br from-neon-purple via-electric-magenta to-cyber-lime" />
           </div>
 
-          <div className="text-center">
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              Ayudamos a las organizaciones a navegar el complejo panorama regulatorio,
-              asegurando el cumplimiento y fortaleciendo la postura de ciberseguridad.
-            </p>
+          <div className="relative z-10">
+            <motion.div
+              initial={{ scale: 0.8 }}
+              whileInView={{ scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-8"
+            >
+              <h3 className="font-space-grotesk font-bold text-4xl lg:text-5xl text-light-ghost mb-6 text-center">
+                Servicios
+                <span className="block text-gradient glow-pulse">
+                  de Compliance
+                </span>
+              </h3>
+              <p className="font-poppins text-xl text-silver-mist leading-relaxed max-w-4xl mx-auto text-center">
+                Ayudamos a las organizaciones a navegar el complejo panorama regulatorio,
+                <span className="block font-bold text-cyber-lime mt-2">
+                  asegurando cumplimiento y fortaleciendo la ciberseguridad.
+                </span>
+              </p>
+            </motion.div>
 
-            <div className="inline-flex items-center space-x-4">
-              <button className="bg-blue-400 bg-opacity-10 border border-blue-400 text-white px-6 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
-                Evaluación Gratuita
-              </button>
-              <button className="bg-gray-400 bg-opacity-10 border border-gray-400 text-white px-6 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
-                Descargar Whitepaper
-              </button>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              {services.map((service, index) => (
+                <motion.div
+                  key={service}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  className="text-center glass-effect rounded-2xl p-6 quantum-border glass-hover"
+                >
+                  <div className="font-poppins text-white text-sm font-semibold">
+                    {service}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="inline-flex items-center gap-4"
+              >
+                <motion.button
+                  onClick={scrollToContact}
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative overflow-hidden px-12 py-6 rounded-2xl font-space-grotesk font-bold text-lg modern-hover hologram-effect"
+                  style={{
+                    background: 'linear-gradient(135deg, rgb(0 255 136) 0%, rgb(0 128 255) 100%)',
+                    color: 'rgb(15 23 42)'
+                  }}
+                >
+                  <div className="relative z-10 flex items-center gap-3">
+                    <span>Evaluación Gratuita</span>
+                    <ArrowRight className="h-6 w-6" />
+                  </div>
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group px-12 py-6 glass-effect electric-border rounded-2xl font-space-grotesk font-bold text-electric-magenta text-lg magnetic-hover flex items-center gap-3"
+                >
+                  <span>Descargar Whitepaper</span>
+                  <ArrowRight className="h-6 w-6" />
+                </motion.button>
+              </motion.div>
             </div>
           </div>
         </motion.div>
 
         {/* Timeline Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-anton text-blue-400 mb-6">
-            PRÓXIMAS FECHAS IMPORTANTES
+          <h3 className="font-space-grotesk font-bold text-3xl lg:text-4xl text-light-ghost mb-8">
+            Próximas Fechas
+            <span className="block text-gradient glow-pulse">
+              Importantes
+            </span>
           </h3>
-          <div className="bg-gray-800 rounded-lg p-6 max-w-4xl mx-auto border border-gray-700 shadow">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-              <div className="text-center">
-                <div className="text-blue-400 font-bold">Abril 2025</div>
-                <div className="text-gray-200">Ley 21663 Chile - Enforcement completo</div>
-              </div>
-              <div className="text-center">
-                <div className="text-blue-400 font-bold">2025 Q2</div>
-                <div className="text-gray-200">NERC CIP - Nuevas actualizaciones</div>
-              </div>
-              <div className="text-center">
-                <div className="text-blue-400 font-bold">Continuo</div>
-                <div className="text-gray-200">NIS2 - Implementación EU</div>
-              </div>
+
+          <div className="glass-effect electric-border rounded-3xl p-8 max-w-5xl mx-auto modern-hover relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute inset-0 opacity-15 blur-3xl">
+              <div className="w-full h-full bg-gradient-to-br from-cyber-lime to-neon-purple" />
+            </div>
+
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { date: "Abril 2025", description: "Ley 21663 Chile - Enforcement completo", icon: "📅" },
+                { date: "2025 Q2", description: "NERC CIP - Nuevas actualizaciones", icon: "⚡" },
+                { date: "Continuo", description: "NIS2 - Implementación EU", icon: "🇪🇺" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.9 + index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="text-4xl mb-3">{item.icon}</div>
+                  <div className="font-space-grotesk font-bold text-2xl text-cyber-lime mb-2 glow-pulse">
+                    {item.date}
+                  </div>
+                  <div className="font-poppins text-silver-mist text-sm">
+                    {item.description}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
