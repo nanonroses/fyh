@@ -165,7 +165,7 @@ const ComplianceSection: React.FC = () => {
         </motion.div>
 
         {/* Frameworks Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 max-w-6xl lg:mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-6xl mx-auto">
           {frameworks.map((framework, index) => (
             <motion.div
               key={framework.name}
@@ -173,7 +173,9 @@ const ComplianceSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.12 }}
-              className="group glass-effect electric-border rounded-3xl p-8 modern-hover relative overflow-hidden"
+              className={`group glass-effect electric-border rounded-3xl p-8 modern-hover relative overflow-hidden ${
+                index === 4 ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''
+              }`}
             >
               {/* Background Glow */}
               <div className="absolute inset-0 opacity-10 blur-3xl">
