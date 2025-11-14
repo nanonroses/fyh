@@ -57,25 +57,48 @@ const AboutSection: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center"
         >
-          <div className="bg-gray-100 rounded-lg p-12 max-w-4xl mx-auto border border-gray-300">
-            <h3 className="text-3xl font-anton text-teal-600 mb-6">
-              NUESTRA MISIÓN
-            </h3>
-            <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Proteger la infraestructura crítica de las organizaciones mediante soluciones
-              avanzadas de ciberseguridad, compliance normativo y automatización inteligente,
-              asegurando la continuidad operacional en la era digital.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <button className="bg-blue-600 bg-opacity-10 border border-blue-600 text-white px-8 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
-                Conoce Nuestro Equipo
-              </button>
-              <button className="bg-teal-600 bg-opacity-10 border border-teal-600 text-white px-8 py-3 rounded-lg hover:bg-opacity-20 transition-all duration-300 font-semibold">
-                Case Studies
-              </button>
+          <motion.div
+            className="glass-effect electric-border rounded-3xl p-12 max-w-4xl mx-auto modern-hover relative overflow-hidden"
+            whileHover={{ scale: 1.02, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Background Glow */}
+            <div className="absolute inset-0 opacity-15 blur-3xl">
+              <div className="w-full h-full bg-gradient-to-br from-cyber-lime via-electric-magenta to-quantum-blue" />
             </div>
-          </div>
+
+            <div className="relative z-10">
+              <h3 className="text-4xl font-space-grotesk font-bold text-white mb-6">
+                NUESTRA MISIÓN
+              </h3>
+              <p className="text-white text-lg leading-relaxed mb-8 max-w-3xl mx-auto">
+                Proteger la infraestructura crítica de las organizaciones mediante soluciones
+                avanzadas de ciberseguridad, compliance normativo y automatización inteligente,
+                asegurando la continuidad operacional en la era digital.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative overflow-hidden px-8 py-3 rounded-2xl font-space-grotesk font-bold text-lg modern-hover hologram-effect"
+                  style={{
+                    background: 'linear-gradient(135deg, rgb(0 255 136) 0%, rgb(0 128 255) 100%)',
+                    color: 'rgb(15 23 42)'
+                  }}
+                >
+                  Conoce Nuestro Equipo
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-3 glass-effect electric-border rounded-2xl font-space-grotesk font-bold text-electric-magenta text-lg magnetic-hover"
+                >
+                  Case Studies
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
