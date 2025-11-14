@@ -1,5 +1,6 @@
 import Header from '@/components/sections/Header'
 import HeroSection from '@/components/sections/HeroSection'
+import OTProblemsSection from '@/components/sections/OTProblemsSection'
 import TrustIndicatorsSection from '@/components/sections/TrustIndicatorsSection'
 import ROICalculatorSection from '@/components/sections/ROICalculatorSection'
 import CyberServicesSection from '@/components/sections/CyberServicesSection'
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <OTProblemsSection />
         <TrustIndicatorsSection />
         <ROICalculatorSection />
         <CyberServicesSection />
