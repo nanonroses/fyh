@@ -157,8 +157,8 @@ const OTProblemsSection: React.FC = () => {
               className="group glass-effect electric-border rounded-2xl p-5 modern-hover relative overflow-hidden"
             >
               {/* Background Glow */}
-              <div className="absolute inset-0 opacity-10 blur-3xl">
-                <div className={`w-full h-full bg-gradient-to-br from-${item.painColor} to-electric-magenta`} />
+              <div className="absolute inset-0 opacity-5 blur-2xl">
+                <div className="w-full h-full bg-gradient-to-br from-slate-400 to-slate-300" />
               </div>
 
               <div className="relative z-10">
@@ -176,23 +176,23 @@ const OTProblemsSection: React.FC = () => {
                 </h3>
 
                 {/* Pain Point - Dolor */}
-                <div className="rounded-xl p-4 mb-4 border border-red-300 bg-white">
-                  <p className="font-poppins text-red-600 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+                <div className="rounded-xl p-4 mb-4 border border-red-400/60 bg-gradient-to-r from-red-50 to-rose-50">
+                  <p className="font-poppins text-red-700 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
                     <TrendingDown className="h-4 w-4" />
                     Problema:
                   </p>
-                  <p className="font-poppins text-dark-void leading-relaxed text-sm">
+                  <p className="font-poppins text-slate-800 leading-relaxed text-sm">
                     {item.pain}
                   </p>
                 </div>
 
                 {/* Solution - Solución */}
-                <div className="rounded-xl p-4 border border-emerald-300 bg-white">
-                  <p className={`font-poppins text-emerald-600 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2`}>
+                <div className="rounded-xl p-4 border border-emerald-400/60 bg-gradient-to-r from-emerald-50 to-teal-50">
+                  <p className={`font-poppins text-emerald-700 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2`}>
                     <CheckCircle2 className="h-4 w-4" />
                     Solución:
                   </p>
-                  <p className="font-poppins text-dark-void leading-relaxed text-sm">
+                  <p className="font-poppins text-slate-800 leading-relaxed text-sm">
                     {item.solution}
                   </p>
                 </div>
