@@ -165,7 +165,7 @@ const ComplianceSection: React.FC = () => {
         </motion.div>
 
         {/* Frameworks Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 max-w-6xl lg:mx-auto">
           {frameworks.map((framework, index) => (
             <motion.div
               key={framework.name}
