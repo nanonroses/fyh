@@ -78,7 +78,7 @@ const OTProblemsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-dark-void via-dark-void/95 to-dark-void relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-dark-void via-dark-void/95 to-dark-void relative overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full" style={{
@@ -146,7 +146,7 @@ const OTProblemsSection: React.FC = () => {
         </motion.div>
 
         {/* Problems Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {problemsSolutions.map((item, index) => (
             <motion.div
               key={item.id}
@@ -154,7 +154,7 @@ const OTProblemsSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.12 }}
-              className="group glass-effect electric-border rounded-3xl p-8 modern-hover relative overflow-hidden"
+              className="group glass-effect electric-border rounded-2xl p-5 modern-hover relative overflow-hidden"
             >
               {/* Background Glow */}
               <div className="absolute inset-0 opacity-10 blur-3xl">
@@ -165,34 +165,34 @@ const OTProblemsSection: React.FC = () => {
                 {/* Problem Icon */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: -5 }}
-                  className={`inline-flex p-4 rounded-2xl bg-gradient-to-r from-${item.painColor} to-electric-magenta mb-6`}
+                  className={`inline-flex p-3 rounded-xl bg-gradient-to-r from-${item.painColor} to-electric-magenta mb-3`}
                 >
-                  <item.icon className="h-10 w-10 text-light-ghost glow-pulse" />
+                  <item.icon className="h-8 w-8 text-light-ghost glow-pulse" />
                 </motion.div>
 
                 {/* Problem Title */}
-                <h3 className="font-space-grotesk font-bold text-2xl text-light-ghost mb-4">
+                <h3 className="font-space-grotesk font-bold text-lg text-light-ghost mb-3">
                   {item.problem}
                 </h3>
 
                 {/* Pain Point - Dolor */}
-                <div className="glass-effect rounded-2xl p-6 mb-8 border border-electric-magenta/30 bg-electric-magenta/5">
-                  <p className="font-poppins text-electric-magenta font-semibold text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                <div className="rounded-xl p-4 mb-4 border border-electric-magenta/50 bg-electric-magenta/15">
+                  <p className="font-poppins text-electric-magenta font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
                     <TrendingDown className="h-4 w-4" />
-                    El Problema Real:
+                    Problema:
                   </p>
-                  <p className="font-poppins text-light-ghost leading-relaxed text-lg">
+                  <p className="font-poppins text-light-ghost leading-relaxed text-sm">
                     {item.pain}
                   </p>
                 </div>
 
                 {/* Solution - Solución */}
-                <div className="glass-effect rounded-2xl p-6 border border-cyber-lime/30 bg-cyber-lime/5">
-                  <p className={`font-poppins text-cyber-lime font-semibold text-sm uppercase tracking-wider mb-3 flex items-center gap-2`}>
+                <div className="rounded-xl p-4 border border-cyber-lime/50 bg-cyber-lime/15">
+                  <p className={`font-poppins text-cyber-lime font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-2`}>
                     <CheckCircle2 className="h-4 w-4" />
-                    La Solución:
+                    Solución:
                   </p>
-                  <p className="font-poppins text-light-ghost leading-relaxed">
+                  <p className="font-poppins text-light-ghost leading-relaxed text-sm">
                     {item.solution}
                   </p>
                 </div>
