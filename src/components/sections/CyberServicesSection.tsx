@@ -272,7 +272,7 @@ const ServicesSection: React.FC = () => {
                     className="flex items-start gap-3"
                   >
                     <CheckCircle className={`h-5 w-5 text-${service.bgColor} mt-0.5 flex-shrink-0 glow-pulse`} />
-                    <span className="font-poppins text-steel-gray text-sm">
+                    <span className="font-poppins text-white text-sm">
                       {deliverable}
                     </span>
                   </motion.div>
