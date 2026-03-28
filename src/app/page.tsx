@@ -1,33 +1,29 @@
 import Header from '@/components/sections/Header'
 import HeroSection from '@/components/sections/HeroSection'
-import OTProblemsSection from '@/components/sections/OTProblemsSection'
 import TrustIndicatorsSection from '@/components/sections/TrustIndicatorsSection'
-import ROICalculatorSection from '@/components/sections/ROICalculatorSection'
 import CyberServicesSection from '@/components/sections/CyberServicesSection'
-import CaseStudiesSection from '@/components/sections/CaseStudiesSection'
+import OTProblemsSection from '@/components/sections/OTProblemsSection'
 import ComplianceSection from '@/components/sections/ComplianceSection'
-import AboutSection from '@/components/sections/AboutSection'
+import CaseStudiesSection from '@/components/sections/CaseStudiesSection'
+import ROICalculatorSection from '@/components/sections/ROICalculatorSection'
 import ContactSection from '@/components/sections/ContactSection'
 import Footer from '@/components/sections/Footer'
-import WhatsAppButton from '@/components/ui/WhatsAppButton'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-light-ghost">
+    <div className="min-h-screen bg-pa-black">
       <Header />
       <main>
         <HeroSection />
-        <OTProblemsSection />
         <TrustIndicatorsSection />
-        <ROICalculatorSection />
+        <OTProblemsSection />
         <CyberServicesSection />
         <CaseStudiesSection />
         <ComplianceSection />
-        <AboutSection />
+        <ROICalculatorSection />
         <ContactSection />
       </main>
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

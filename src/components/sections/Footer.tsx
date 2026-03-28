@@ -1,137 +1,78 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { Shield, Bot, Zap, Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react';
+
+const products = ['Protección OT Avanzada', 'Compliance Regulatorio', 'Automatización Inteligente', 'Transformación Digital OT', 'Assessment Diagnóstico'];
+const solutions = ['Minería', 'Banca y Finanzas', 'Energía', 'Infraestructura Crítica', 'Manufactura'];
+const company = ['Casos de Éxito', 'Partners', 'Contacto'];
+const compliance = ['Ley 21663', 'NERC CIP', 'NIS2', 'ISO 27001', 'MITRE ATT&CK'];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
-  const services = [
-    "Automatización RPA",
-    "Ciberseguridad Integral", 
-    "Monitoreo Digital",
-    "Proyectos SAP",
-    "Infraestructura TI"
-  ]
-
-  const industries = [
-    "Minería",
-    "Banca y Finanzas",
-    "Retail",
-    "Salud",
-    "Telecomunicaciones"
-  ]
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-4 gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2"
-          >
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="flex items-center space-x-1">
-                <Shield className="h-8 w-8 text-cyan-400" />
-                <Bot className="h-6 w-6 text-blue-400" />
-                <Zap className="h-6 w-6 text-indigo-400" />
-              </div>
-              <span className="text-2xl font-bold">F&Y Ingenieros</span>
+    <footer className="bg-pa-footer text-[#333]">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Brand */}
+          <div className="col-span-2 lg:col-span-1">
+            <div className="flex items-center gap-2 mb-4">
+              <svg width="24" height="24" viewBox="0 0 28 28" className="text-pa-orange">
+                <path d="M4 4h8v8H4V4zm12 0h8v8h-8V4zM4 16h8v8H4v-8z" fill="currentColor"/>
+              </svg>
+              <span className="font-extrabold text-xl text-[#111] tracking-tight">
+                fyh<span className="text-pa-orange">.</span>
+              </span>
             </div>
-            
-            <p className="text-slate-300 mb-6 leading-relaxed max-w-md">
-              Transformamos empresas con automatización inteligente, ciberseguridad de clase mundial 
-              e infraestructura tecnológica robusta. Tu partner para la excelencia operacional.
+            <p className="text-sm text-[#666] mb-4 leading-relaxed">
+              Consultores especializados en ciberseguridad OT, compliance IEC 62443 y protección de infraestructura crítica.
             </p>
-
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-cyan-400" />
-                <span className="text-slate-300">contacto@fyhingenieros.cl</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-blue-400" />
-                <span className="text-slate-300">+56 9 6211 6017</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-indigo-400" />
-                <span className="text-slate-300">Chile - Servicios en todo el país</span>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <h3 className="text-lg font-semibold mb-6">Servicios Principales</h3>
-            <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <button className="text-slate-300 hover:text-white transition-colors text-left">
-                    {service}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <h3 className="text-lg font-semibold mb-6">Industrias</h3>
-            <ul className="space-y-3">
-              {industries.map((industry, index) => (
-                <li key={index}>
-                  <span className="text-slate-300">{industry}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8">
-              <h4 className="text-sm font-semibold mb-3 text-slate-400">CERTIFICACIONES</h4>
-              <div className="space-y-1 text-sm text-slate-300">
-                <div>ISO 27001</div>
-                <div>PCI-DSS</div>
-                <div>SOC Compliance</div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="border-t border-slate-700 mt-12 pt-8"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-slate-400 text-sm mb-4 md:mb-0">
-              © {currentYear} F&Y Ingenieros. Todos los derechos reservados.
-            </div>
-            
-            <div className="flex items-center space-x-6 text-sm text-slate-400">
-              <button className="hover:text-white transition-colors">
-                Política de Privacidad
-              </button>
-              <button className="hover:text-white transition-colors">
-                Términos de Servicio
-              </button>
-              <div className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-3 py-1 rounded-full text-xs">
-                Disponible 24/7
+            <div className="space-y-2">
+              <a href="mailto:contacto@fyhingenieros.cl" className="flex items-center gap-2 text-sm text-[#666] hover:text-[#111] transition-colors">
+                <Mail className="h-4 w-4" /> contacto@fyhingenieros.cl
+              </a>
+              <a href="tel:+56962116017" className="flex items-center gap-2 text-sm text-[#666] hover:text-[#111] transition-colors">
+                <Phone className="h-4 w-4" /> +56 9 6211 6017
+              </a>
+              <div className="flex items-center gap-2 text-sm text-[#888]">
+                <MapPin className="h-4 w-4" /> Chile
               </div>
             </div>
           </div>
-        </motion.div>
+
+          <div>
+            <h4 className="font-bold text-[#111] text-sm mb-4">Servicios</h4>
+            <ul className="space-y-2.5">{products.map(p => <li key={p}><span className="text-sm text-[#666] hover:text-[#111] cursor-pointer transition-colors">{p}</span></li>)}</ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-[#111] text-sm mb-4">Industrias</h4>
+            <ul className="space-y-2.5">{solutions.map(s => <li key={s}><span className="text-sm text-[#666]">{s}</span></li>)}</ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-[#111] text-sm mb-4">Compliance</h4>
+            <ul className="space-y-2.5">{compliance.map(c => <li key={c}><span className="text-sm text-[#666]">{c}</span></li>)}</ul>
+          </div>
+          <div>
+            <h4 className="font-bold text-[#111] text-sm mb-4">Empresa</h4>
+            <ul className="space-y-2.5">{company.map(c => <li key={c}><span className="text-sm text-[#666] hover:text-[#111] cursor-pointer transition-colors">{c}</span></li>)}</ul>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-[#ddd] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-2">
+            <svg width="20" height="20" viewBox="0 0 28 28" className="text-pa-orange">
+              <path d="M4 4h8v8H4V4zm12 0h8v8h-8V4zM4 16h8v8H4v-8z" fill="currentColor"/>
+            </svg>
+            <span className="font-bold text-sm text-[#111]">fyh<span className="text-pa-orange">.</span></span>
+          </div>
+          <div className="flex items-center gap-6 text-xs text-[#888]">
+            <span className="hover:text-[#111] cursor-pointer">Privacidad</span>
+            <span className="hover:text-[#111] cursor-pointer">Términos</span>
+            <span>© {year} FYH Ingenieros</span>
+          </div>
+        </div>
       </div>
     </footer>
-  )
+  );
 }

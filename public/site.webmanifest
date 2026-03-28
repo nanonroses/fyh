@@ -1,0 +1,10 @@
+{
+  "name": "FYH Ingenieros 2.0 - Ciberseguridad OT",
+  "short_name": "FYH 2.0",
+  "description": "Líderes en Ciberseguridad OT en Chile",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "icons": []
+}
